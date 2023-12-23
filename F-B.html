@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biographie-Musée </title>
+</head>
+
+<style>
+    *, *:before, *:after 
+{ box-sizing: border-box; }
+
+    html, body {
+	margin: 0;
+	padding: 0px;
+	height: 100vh;
+    overflow-x: hidden;
+    background-color: #000000;
+    
+}
+
+body{
+    height: 1250px;
+}
+label .menu {
+  position: relative;
+  right: -00px;
+  top: -100px;
+  z-index: 100;
+  width: 100px;
+  height: 200px;
+  background: #393939;
+  border-radius: 50% 50% 50% 50%;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  box-shadow: 0 0 0 0 darkgoldenrod, 0 0 0 0 darkgoldenrod;
+  cursor: pointer;
+  
+}
+
+label .hamburger {
+  position: absolute;
+  top: 115px;
+  left: 20px;
+  width: 30px;
+  height: 2px;
+  background: darkgoldenrod;
+  display: block;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+label .hamburger:after, label .hamburger:before {
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: darkgoldenrod;
+}
+
+label .hamburger:before { top: -10px; }
+
+label .hamburger:after { bottom: -10px; }
+
+label input { display: none; }
+
+label input:checked + .menu {
+  box-shadow: 0 0 0 100vw #393939, 0 0 0 100vh #393939;
+  border-radius: 0;
+  
+}
+
+label input:checked + .menu .hamburger {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  
+}
+
+label input:checked + .menu .hamburger:after {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  bottom: 0;
+  
+}
+
+label input:checked + .menu .hamburger:before {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  top: 0;
+  
+}
+
+label input:checked + .menu + ul { opacity: 1; }
+
+label ul {
+  z-index: 200;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  -webkit-transition: .25s 0s ease-in-out;
+  transition: .25s 0s ease-in-out;
+}
+
+label a {
+  margin-bottom: 1em;
+  display: block;
+  color: #f38630;
+  text-decoration: none;
+  
+}
+header{
+    
+    background-color: rgb(39, 39, 39);
+    height: 50px;
+
+}
+
+
+#header h1{
+    color: darkgoldenrod;
+    text-align: center;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style:italic; 
+}
+
+#header a{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+
+    h1{
+        text-align: center;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-style: oblique;
+        color: darkgoldenrod;
+    }
+
+    p{
+        font-size: 18px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    #piedpage {
+	
+	bottom: 0; left: 0;
+	width: 100%;
+    background-color: #000000;;
+    height: 85px;
+    border-top: #000000 solid 1px;
+    border-bottom: #000000;
+    position: fixed;
+}
+.btnplan {
+    
+    border: 0;
+    line-height: 4;
+    padding:26px 10px;
+    font-size: 1rem;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+    margin-left: 2px;
+    margin-top: 1px;
+    color: #ffffff;
+    /*text-shadow: 1px 1px 1px #000;*/
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);
+    /*background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));*/
+    /*box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);*/
+    width: 17%;
+    background-image: url(https://api.iconify.design/teenyicons:floorplan-solid.svg?color=%23ffffff);
+    background-repeat: no-repeat;
+    background-position: 50% 13px;
+    background-size: 32px;
+    
+}
+
+.btninfo{
+    border: 0;
+    line-height: 4;
+    padding:26px 10px;
+    font-size: 1rem;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+    margin-left: 2px;
+    margin-top: 1px;
+    color: #ffffff;
+    /*text-shadow: 1px 1px 1px #000;*/
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);
+    /*background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));*/
+    /*box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);*/
+    width: 17%;
+    background-image: url(https://api.iconify.design/clarity:help-info-solid.svg?color=%23ffffff);
+    background-repeat: no-repeat;
+    background-position: 50% 15px;
+    background-size: 28px;
+    
+    
+}
+
+.btnvillage{
+    border: 0;
+    line-height: 4;
+    padding:26px 10px;
+    font-size: 1rem;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+    margin-left: 2px;
+    margin-top: 1px;
+    color: #ffffff;
+    /*text-shadow: 1px 1px 1px #000;*/
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);
+    /*background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));*/
+    /*box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);*/
+    width: 17%;
+    background-image: url(https://api.iconify.design/healthicons:village-outline.svg?color=%23ffffff);
+    background-repeat: no-repeat;
+    background-position: 50% 10px;
+    background-size: 41px;
+    
+    
+}
+
+.btncollec{
+    border: 0;
+    line-height: 4;
+    padding:26px 10px;
+    font-size: 1rem;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+    margin-left: 2px;
+    margin-top: 1px;
+    color: darkgoldenrod;
+    /*text-shadow: 1px 1px 1px #000;*/
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);
+    /*background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));*/
+    /*box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);*/
+    width: 17%;
+    background-image: url(https://api.iconify.design/simple-icons:musescore.svg?color=%23b8860b);
+    background-repeat: no-repeat;
+    background-position: 50% 10px;
+    background-size: 35px;
+    
+    
+}
+
+.btnvisite{
+    border: 0;
+    line-height: 4;
+    padding:26px 10px;
+    font-size: 1rem;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+    margin-left: 2px;
+    margin-top: 1px;
+    color: #ffffff;
+    /*text-shadow: 1px 1px 1px #000;*/
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);
+    /*background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));*/
+    /*box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);*/
+    width: 17%;
+    background-image: url(https://api.iconify.design/fluent-mdl2:video-360-generic.svg?color=%23ffffff);
+    background-repeat: no-repeat;
+    background-position: 50% 10px;
+    background-size: 35px;
+    
+    
+}
+
+div img{
+    margin:auto;
+    display:flex;
+    width: 20%;
+}
+
+footer{
+    text-align: center;
+    position: fixed;
+}
+
+@media screen and (max-width:980px) {
+    div img{
+    margin:auto;
+    display:flex;
+    width: 50%;
+}
+
+#header h1{
+    font-size: 25px;
+}
+    
+}
+
+@media screen and (max-width:395px) {
+    
+
+#header h1{
+    font-size: 20px;
+}
+    
+}
+    </style>
+<body>
+
+    <header>
+        <div id="header">
+            <a href=""><img src="" style="padding-top: 10px; width: 30px; margin-left: 20px;margin-top: -18px;"></a>
+            <h1 style="margin-top: -8px;">Francisco Bajén (1912-2014)</h1>
+
+        </div>
+
+        <label>
+            <a href="page-transition-collection.html"><img src="https://api.iconify.design/cil:arrow-circle-left.svg?color=%23b8860b" style="padding-top: 10px; width: 30px; margin-left: 20px;margin-top: 5px;"></a>
+            <input type="checkbox">
+            <span class="menu"> <span class="hamburger"></span> </span>
+            <ul>
+              <li> <a href="#">Français</a> </li>
+              <li> <a href="#">Espagnol</a> </li>
+              <li> <a href="#">Anglais</a> </li>
+            </ul>
+            </label>
+    </header>
+
+ <div>
+    
+ 
+    <img src="francisco.jpg">
+</div>
+    <p style="color: #ffffff;">Le peintre du silence
+
+        Francisco Bajén était né en Espagne en 1912, à la suite de la guerre civile, il s’exile en France, il arrive dans le Tarn en 1939 puis s’installe à Saint-Juéry, et se retira par la suite à Albi. Le peintre Francisco Bajèn est mort en 2014 à l’âge de 102 ans
+        
+        Francisco Bajén est un des rares artistes a avoir eu un musée à son nom de son vivant, inauguré en 1999 à Monestiès où 150 de ses tableaux sont exposés
+        
+        Francisco Bajén se destina d’abord au dessin avant de s’orienter en 1946 vers la peinture. Influencé à ses débuts par le mouvement cubiste, il s’en détache pour peindre des scènes de genre, des nus, des paysages. Francisco Bajén restera figuratif tout au long de sa vie.
+        
+        Les œuvres de Francisco Bajén furent présentées Galeries Drouant à Paris et Léandro à Genève. Ses œuvres prendront places dans les grandes collections d’Europe, d’Amérique (Etats-Unis) et du Japon (Tokyo).</p>
+    
+        <footer>
+            <div id="piedpage">
+                <a href="plan-fr.html"><button class="btnplan" type="button" style="cursor: pointer;">Plan</button></a>
+                <a href="page-transition-collection.html"><button class="btncollec" type="button" style="cursor: pointer; width: 23%; padding-left: 4px;">Biographie</button></a>
+                <button class="btnvisite" type="button"style="cursor: pointer;">Visite</button>
+                <a href="infos.html"><button class="btninfo" type="button"style="cursor: pointer;">Infos</button></a>
+                <a href="village.html"><button class="btnvillage" type="button" style="cursor: pointer;">Village</button></a>
+            </div>
+        </footer> 
+</body>
+
+</html>

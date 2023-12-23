@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<style>
+    *, *:before, *:after 
+{ box-sizing: border-box; }
+   html, body {
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+    overflow: hidden;
+}
+
+label .menu {
+  position: relative;
+  right: -5px;
+  top: -144px;
+  z-index: 100;
+  width: 100px;
+  height: 200px;
+  background: #393939;
+  border-radius: 50% 50% 50% 50%;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  box-shadow: 0 0 0 0 darkgoldenrod, 0 0 0 0 darkgoldenrod;
+  cursor: pointer;
+  
+}
+
+label .hamburger {
+  position: absolute;
+  top: 105px;
+  left: 80px;
+  width: 30px;
+  height: 2px;
+  background: darkgoldenrod;
+  display: block;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+label .hamburger:after, label .hamburger:before {
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: darkgoldenrod;
+}
+
+label .hamburger:before { top: -10px; }
+
+label .hamburger:after { bottom: -10px; }
+
+label input { display: none; }
+
+label input:checked + .menu {
+  box-shadow: 0 0 0 100vw #393939, 0 0 0 100vh #393939;
+  border-radius: 0;
+  
+}
+
+label input:checked + .menu .hamburger {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  
+}
+
+label input:checked + .menu .hamburger:after {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  bottom: 0;
+  
+}
+
+label input:checked + .menu .hamburger:before {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  top: 0;
+  
+}
+
+label input:checked + .menu + ul { opacity: 1; }
+
+label ul {
+  z-index: 200;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  -webkit-transition: .25s 0s ease-in-out;
+  transition: .25s 0s ease-in-out;
+}
+
+label a {
+  margin-bottom: 1em;
+  display: block;
+  color: #f38630;
+  text-decoration: none;
+  
+}
+header{
+    
+    background-color: rgb(39, 39, 39);
+    height: 50px;
+
+}
+
+
+#header h1{
+    color: darkgoldenrod;
+    text-align: center;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style:italic; 
+    margin-top: 20px;
+}
+
+#header a{
+    margin-left: 5px;
+    margin-top: 23px;
+}
+iframe{
+    position: relative;
+    z-index: 10;
+}
+p {
+    position: absolute;
+    margin-left: 18%;
+    margin-top:0%;
+    z-index: 20;
+    
+}
+
+iframe a{
+   
+    font-size: 20px;
+    background-image: url(https://api.iconify.design/mingcute:aiming-line.svg);
+    background-repeat: no-repeat;
+    
+    
+}
+
+.police{
+    font-size: 22px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+}
+
+#piedpage {
+	position: absolute;
+	bottom: 0; left: 0;
+	width: 100%;
+    background-color: #ffffff;;
+    height: 85px;
+    border: #000000 solid 1px;
+    border-bottom: #ffffff;
+}
+.btnplan {
+    
+    border: 0;
+    line-height: 4;
+    padding:26px 10px;
+    font-size: 1rem;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+    margin-left: 2px;
+    margin-top: 1px;
+    color: #000000;
+    /*text-shadow: 1px 1px 1px #000;*/
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    /*background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));*/
+    /*box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);*/
+    width: 17%;
+    background-image: url(https://api.iconify.design/teenyicons:floorplan-solid.svg?color=%23000000);
+    background-repeat: no-repeat;
+    background-position: 50% 13px;
+    background-size: 32px;
+    
+}
+
+.btninfo{
+    border: 0;
+    line-height: 4;
+    padding:26px 10px;
+    font-size: 1rem;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+    margin-left: 2px;
+    margin-top: 1px;
+    color: #000000;
+    /*text-shadow: 1px 1px 1px #000;*/
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    /*background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));*/
+    /*box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);*/
+    width: 17%;
+    background-image: url(https://api.iconify.design/clarity:help-info-solid.svg?color=%23000000);
+    background-repeat: no-repeat;
+    background-position: 50% 15px;
+    background-size: 28px;
+    
+    
+}
+
+.btnvillage{
+    border: 0;
+    line-height: 4;
+    padding:26px 10px;
+    font-size: 1rem;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+    margin-left: 2px;
+    margin-top: 1px;
+    color: darkgoldenrod;
+    /*text-shadow: 1px 1px 1px #000;*/
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    /*background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));*/
+    /*box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);*/
+    width: 17%;
+    background-image: url(https://api.iconify.design/healthicons:village-outline.svg?color=%23b8860b);
+    background-repeat: no-repeat;
+    background-position: 50% 10px;
+    background-size: 41px;
+    
+    
+}
+
+.btncollec{
+    border: 0;
+    line-height: 4;
+    padding:26px 10px;
+    font-size: 1rem;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+    margin-left: 2px;
+    margin-top: 1px;
+    color: #000000;
+    /*text-shadow: 1px 1px 1px #000;*/
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    /*background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));*/
+    /*box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);*/
+    width: 17%;
+    background-image: url(https://api.iconify.design/simple-icons:musescore.svg?color=%23000000);
+    background-repeat: no-repeat;
+    background-position: 50% 10px;
+    background-size: 35px;
+    
+    
+}
+
+.btnvisite{
+    border: 0;
+    line-height: 4;
+    padding:26px 10px;
+    font-size: 1rem;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+    margin-left: 2px;
+    margin-top: 1px;
+    color: #000000;
+    /*text-shadow: 1px 1px 1px #000;*/
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    /*background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));*/
+    /*box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);*/
+    width: 17%;
+    background-image: url(https://api.iconify.design/fluent-mdl2:video-360-generic.svg?color=%23000000);
+    background-repeat: no-repeat;
+    background-position: 50% 10px;
+    background-size: 35px;
+    
+    
+}
+
+
+footer{
+    text-align: center;
+}
+
+@media screen and (min-width:539px) and (max-width:913px){
+
+p{
+    margin-left: 37%; 
+}
+
+}
+ @media screen and (min-width:1030px) {
+
+    p{
+        margin-left: 45%; 
+    }
+     iframe{
+        height: 76%;
+     }
+ }
+
+ @media screen and (max-width:376px) {
+
+
+ iframe{
+    height: 68%;
+ }
+}
+
+@media screen and (min-width:377px) and (max-width:915px) {
+
+
+iframe{
+   height: 67%;
+}
+}
+@media screen and (min-width:539px) and (max-width:545px) {
+
+
+iframe{
+   height: 75%;
+}
+p{
+    margin-left: 30%;
+}
+}
+
+@media screen and (min-width:1023px) and (max-width:1025px) {
+
+
+iframe{
+   height: 70%;
+}
+p{
+    margin-left: 43%;
+}
+}
+
+
+@media screen and  (max-width:538px) {
+
+label .menu {
+  position: relative;
+  right: -275px;
+  top: -144px;
+ 
+}
+}
+
+@media screen and  (max-width:361px) and (min-width:359px) {
+
+label .menu {
+  position: relative;
+  right: -245px;
+  top: -144px;
+ 
+}
+}
+
+@media screen and  (max-width:376px) and (min-width:374px) {
+
+label .menu {
+  position: relative;
+  right: -245px;
+  top: -144px;
+ 
+}
+}
+</style>
+<body>
+    <header>
+        <div id="header">
+            <a href="village.html"><img src="https://api.iconify.design/cil:arrow-circle-left.svg?color=%23b8860b" style=" width: 30px; margin-left: 10px;margin-top: 10px;"></a>
+            <h1 style="margin-top: -40px;">Carte Interactive</h1>
+
+        </div>
+        <label>
+        <input type="checkbox">
+        <span class="menu"> <span class="hamburger"></span> </span>
+        <ul>
+          <li> <a href="#">Français</a> </li>
+          <li> <a href="#">Espagnol</a> </li>
+          <li> <a href="#">Anglais</a> </li>
+        </ul>
+        </label>
+    </header>
+    <iframe width="100%" height="76%" frameborder="0" allowfullscreen src="https://umap.openstreetmap.fr/fr/map/clone-de-monesties_886097#17/44.07103/2.09698"></iframe><p><button class="police" style="border-radius: 5%; background-color: #000000;"><a href="https://umap.openstreetmap.fr/fr/map/monesties_742837" style="text-decoration: none; color: darkgoldenrod; background-color: black;"><b>ICI</b> pour vous geolocaliser</a></p></button>
+
+    <footer>
+        <div id="piedpage">
+            <a href="plan-fr.html"><button class="btnplan" type="button" style="cursor: pointer;">Plan</button></a>
+            <a href="page-transition-collection.html"><button class="btncollec" type="button" style="cursor: pointer; width: 23%; padding-left: 4px;">Biographie</button></a>
+            <button class="btnvisite" type="button"style="cursor: pointer;">Visite</button>
+            <a href="infos.html"><button class="btninfo" type="button"style="cursor: pointer;">Infos</button></a>
+            <a href="village.html"><button class="btnvillage" type="button" style="cursor: pointer;">Village</button></a>
+        </div>
+    </footer>
+</body>
+</html>
