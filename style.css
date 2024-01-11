@@ -18,6 +18,26 @@ html, body{
     overflow-x: hidden;
 }
 
+header{
+    
+    background-color: rgb(39, 39, 39);
+    height: 50px;
+
+}
+
+
+#header h2{
+    color: darkgoldenrod;
+    text-align: center;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style:italic; 
+}
+
+#header a{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
 h1{
     font-size: 4rem;
     color: #fff;
@@ -204,7 +224,7 @@ h1{
     /*background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));*/
     /*box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);*/
     width: 17%;
-    background-image: url(https://api.iconify.design/healthicons:village-outline.svg?color=%23000000);
+    background-image: url(https://api.iconify.design/ant-design:slack-outlined.svg?color=%23000000);
     background-repeat: no-repeat;
     background-position: 50% 10px;
     background-size: 41px;
